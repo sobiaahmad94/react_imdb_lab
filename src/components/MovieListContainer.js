@@ -1,18 +1,18 @@
 import React from 'react'
 import MovieItem from './MovieItem'
 
-const MovieListContainer = () => {
+const MovieListContainer = ({ movies }) => {
+    const movieItems = movies.map((movie) => {
+        return (
+            <MovieItem movie={movie} key={movie.id} />
+        )
+    })
     return (
-        <>
-        <h1>I'm the MovieListContainer</h1>
-        {/*  */}
-        <MovieItem />
-        <MovieItem />
-        <MovieItem />
-        <MovieItem />
-
-
-        </>
+        <div>
+            <ul>
+                {movieItems}
+            </ul>
+        </div>
     )
 }
 
